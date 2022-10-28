@@ -1,0 +1,21 @@
+global proc setAutoFrame()
+	{
+toggleAutoLoad graphEditor1OutlineEd 0;
+int $fit = `optionVar -q graphEditorAutoFit`;
+if ($fit==0){
+    optionVar -intValue graphEditorAutoFit 1;
+        
+	}
+{ 
+         
+if ($fit==0){
+    optionVar -intValue graphEditorAutoFit 1;
+	}
+	doReload graphEditor1OutlineEd;
+    toggleAutoLoad graphEditor1OutlineEd 0;
+}	
+	
+	}
+int $jobId = `scriptJob -e graphEditorChanged setAutoFrame`;
+
+//scriptJob -kill $jobId;
