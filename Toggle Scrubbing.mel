@@ -1,0 +1,13 @@
+global int $x;
+
+
+if ($x % 2)
+
+setToolTo TimeDragger;
+
+else
+
+invokeLastAction;
+
+
+$x++;
